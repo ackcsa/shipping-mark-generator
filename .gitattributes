@@ -1,0 +1,16 @@
+# 统一用 LF 存进仓库，避免 Windows/Linux 之间反复改行尾
+* text=auto eol=lf
+
+# 二进制，别碰
+*.docx  binary
+*.xlsx  binary
+*.xlsm  binary
+*.png   binary
+*.ico   binary
+*.exe   binary
+
+# 这些就是 LF
+*.py    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.bat   text eol=crlf

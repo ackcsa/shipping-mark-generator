@@ -1,0 +1,57 @@
+{
+  "_说明": "唛头生成器配置。相对路径一律相对于本文件所在目录。",
+  "master_docx": "唛头母本.docx",
+  "input_xlsx": "唛头模板表.xlsx",
+  "output_docx": "",
+  "_output_docx说明": "留空 = 自动命名：唛头 + 第一个票名去掉末尾分票字母 + .docx，写在**模板表所在文件夹**里。",
+  "sheet_name": "唛头输入表",
+  "header_row": 1,
+  "data_start_row": 2,
+  "_表结构说明": "明细行与 PL箱单 对齐：A..M = Items/Descriptions/Specifications/Material/Quantity/Unit/Packages/NW/Net weight (kg)/GW/Gross weight (kg)/CBM/品名中英文（与 PL箱单 同名同序，可直接从箱单复制列粘进来）；N..T = 票名/厂家英文/发货人/发货人地址/收货人/收货人地址/原产国（PL 里没有，需手填）。r1=表头，r2 起=明细行。",
+  "_编号说明": "编号按行从上到下累加：每行的 Packages = 该行要出的唛头个数；PACKAGE NO = <本票件数合计>-<序号>，序号跨行连续 1,2,3…；本票所有唛头的 TOTAL 都 = 本票件数合计。",
+  "uppercase_fields": [
+    "品名英文",
+    "厂家英文"
+  ],
+  "total_singular": true,
+  "_total_singular说明": "件数=1 时 TOTAL 写 `1 PACKAGE`（单数）；改成 false 则一律写 `1 PACKAGES`（与示例唛头 8 PACKAGES 的字面风格一致）。",
+  "fill_down_fields": [
+    "票名",
+    "厂家英文",
+    "发货人",
+    "发货人地址",
+    "收货人",
+    "收货人地址",
+    "原产国"
+  ],
+  "required_fields": [
+    "票名",
+    "品名英文",
+    "件数",
+    "厂家英文",
+    "发货人",
+    "发货人地址",
+    "收货人",
+    "收货人地址",
+    "原产国"
+  ],
+  "overflow_check": {
+    "enabled": true,
+    "on_overflow": "warn"
+  },
+  "_overflow_check说明": "估算每个唛头占多少行（按 Times New Roman 字宽表 + 母本页面几何），超出一页可用高度就提示。on_overflow: warn（默认，只警告照出）| error（停下不产出）。",
+  "pl_check": {
+    "enabled": true,
+    "dir": [
+      "."
+    ],
+    "patterns": [
+      "中国三单{票名}.xlsx",
+      "越南四单{票名}.xlsx"
+    ],
+    "sheet": "PL箱单",
+    "packages_col": 7,
+    "on_missing_file": "warn",
+    "on_mismatch": "error"
+  }
+}
