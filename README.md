@@ -13,6 +13,20 @@
 
 ---
 
+## 直接下载（不用装 Python）
+
+[![Release](https://img.shields.io/github/v/release/ackcsa/shipping-mark-generator)](https://github.com/ackcsa/shipping-mark-generator/releases/latest)
+
+**➜ [下载最新版 exe（Windows 免安装）](https://github.com/ackcsa/shipping-mark-generator/releases/latest)**
+
+下载 `shipping-mark-generator_v2.0.0.zip` → **整个解压**到一个文件夹 → 双击 `唛头生成器.exe`
+→ 把 `唛头模板表.xlsx` 拖进窗口 → 点「开始生成」。
+
+> 别只把 exe 拖出来：它旁边的 `_internal\` 是运行必需的。
+> 窗口里有「使用教程」和「常见问题」两个页签。
+
+---
+
 ## 这是干什么的
 
 外贸/报关场景里，一批货要贴几十上百张唛头（Shipping Mark）。手工复制粘贴 Word 又慢又容易错号。
